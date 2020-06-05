@@ -1,6 +1,6 @@
 # Overview
 
-This baseline OCR solution is a two step solution involving: 1) a text detection step, and 2) a text recognition step. The detection step (1), finds arbitrary rotated bounding boxes of text within a given image. It uses a Faster-RCNN detection architecture with a rotation RPN [1]. The trunk is based on the dmasking model from the FBNet family for efficiency [2]. The recognition step (2) is run on image patches cropped from the original image to recognize single words from the bounding box. It is based on the character sequence encoding (CHAR) as proposed in [3]. The trunk is based on the fbnet_c model from the FBNet family for efficiency [2].
+This baseline OCR solution is a two step solution involving: 1) a text detection step, and 2) a text recognition step. The detection step (1), finds arbitrary rotated bounding boxes of text within a given image. It uses a Faster-RCNN detection architecture with a rotation RPN [1]. The trunk is based on the dmasking model from the FBNet family for efficiency [2]. The recognition step (2) is run on image patches cropped from the original image to recognize single words from the bounding box. It is based on the character sequence encoding (CHAR) as proposed in [3] and trained in the Rosetta frame work [4]. The trunk is based on the fbnet_c model from the FBNet family for efficiency [2].
 
 The models were trained with publicly available datasets. For the text detection mode, we use the SynthText in the Wild dataset [4]. The model was trained with detectron2 framework [5] with efficient model archs as specified [6]. For the text recognition model, we use data from both [4] and [7] for training. 
 
@@ -10,13 +10,15 @@ The models were trained with publicly available datasets. For the text detection
 
 [3] M. Jaderberg, K. Simonyan, A. Vedaldi, and A. Zisserman. “Synthetic Data and Artificial Neural Networks for Natural Scene Text Recognition”, in NeurIPS Deep Learning Workshop, 2014
 
-[4] A. Gupta, A. Vedaldi, and A. Zisserman, “Synthetic Data for Text Localisation in Natural Images”, in CVPR, 2016
+[4] F.r Borisyuk, A. Gordo, and V. Sivakumar. "Rosetta: Large scale system for text detection and recognition in images", in KDD, 2018
 
-[5] https://github.com/facebookresearch/detectron2
+[5] A. Gupta, A. Vedaldi, and A. Zisserman, “Synthetic Data for Text Localisation in Natural Images”, in CVPR, 2016
 
-[6] https://github.com/facebookresearch/mobile-vision/tree/master/mobile_cv/arch
+[6] https://github.com/facebookresearch/detectron2
 
-[7] M. Jaderberg, K. Simonyan, A. Vedaldi, and A. Zisserman, “Reading Text in the Wild with Convolutional Neural Networks”, in IJCV, 2016
+[7] https://github.com/facebookresearch/mobile-vision/tree/master/mobile_cv/arch
+
+[8] M. Jaderberg, K. Simonyan, A. Vedaldi, and A. Zisserman, “Reading Text in the Wild with Convolutional Neural Networks”, in IJCV, 2016
 
 # Prerequisites
 
