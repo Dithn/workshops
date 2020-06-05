@@ -1,24 +1,26 @@
 # Overview
 
-This baseline OCR solution is a two step solution involving: 1) a text detection step, and 2) a text recognition step. The detection step (1), finds arbitrary rotated bounding boxes of text within a given image. It uses a Faster-RCNN detection architecture with a rotation RPN [1]. The trunk is based on the dmasking model from the FBNet family for efficiency [2]. The recognition step (2) is run on image patches cropped from the original image to recognize single words from the bounding box. It is based on the character sequence encoding (CHAR) as proposed in [3] and trained in the Rosetta frame work [4]. The trunk is based on the fbnet_c model from the FBNet family for efficiency [2].
+This baseline OCR solution is a two step solution involving: 1) a text detection step, and 2) a text recognition step. The detection step (1), finds arbitrary rotated bounding boxes of text within a given image. It uses a Faster-RCNN detection architecture with a rotation RPN [1, 2]. The trunk is based on the dmasking model from the FBNet family for efficiency [3]. The recognition step (2) is run on image patches cropped from the original image to recognize single words from the bounding box. It is based on the character sequence encoding (CHAR) as proposed in [4] and trained in the Rosetta frame work [5]. The trunk is based on the fbnet_c model from the FBNet family for efficiency [3].
 
-The models were trained with publicly available datasets. For the text detection mode, we use the SynthText in the Wild dataset [5]. The model was trained with detectron2 framework [6] with efficient model archs as specified [7]. For the text recognition model, we use data from both [5] and [8] for training. 
+The models were trained with publicly available datasets. For the text detection mode, we use the SynthText in the Wild dataset [6]. The model was trained with detectron2go framework [7] with efficient model archs as specified [8]. For the text recognition model, we use data from both [6] and [9] for training. 
 
 [1] J. Ma, W. Shao, H. Ye, L. Wang, H. Wang, Y. Zheng, and X. Xue. "Arbitrary-oriented scene text detection via rotation proposals",  in IEEE Trans. on Multimedia, 2018
 
-[2] B. Wu, X. Dai, P. Zhang, Y. Wang, F. Sun, Y. Wu, Y. Tian, P. Vajda, Y. Jia, and K. Keutzer, “FBNet: Hardware-Aware Efficient ConvNet Design via Differentiable Neural Architecture Search”, in CVPR, 2019
+[2] J. Huang, V. Sivakumar, M. Mnatsakanyan, and G. Pang. "Arbitrary-oriented scene text detection via rotation proposals",  arXiv preprint arXiv:1811.07031
 
-[3] M. Jaderberg, K. Simonyan, A. Vedaldi, and A. Zisserman. “Synthetic Data and Artificial Neural Networks for Natural Scene Text Recognition”, in NeurIPS Deep Learning Workshop, 2014
+[3] B. Wu, X. Dai, P. Zhang, Y. Wang, F. Sun, Y. Wu, Y. Tian, P. Vajda, Y. Jia, and K. Keutzer, “FBNet: Hardware-Aware Efficient ConvNet Design via Differentiable Neural Architecture Search”, in CVPR, 2019
 
-[4] F.r Borisyuk, A. Gordo, and V. Sivakumar. "Rosetta: Large scale system for text detection and recognition in images", in KDD, 2018
+[4] M. Jaderberg, K. Simonyan, A. Vedaldi, and A. Zisserman. “Synthetic Data and Artificial Neural Networks for Natural Scene Text Recognition”, in NeurIPS Deep Learning Workshop, 2014
 
-[5] A. Gupta, A. Vedaldi, and A. Zisserman, “Synthetic Data for Text Localisation in Natural Images”, in CVPR, 2016
+[5] F. Borisyuk, A. Gordo, and V. Sivakumar. "Rosetta: Large scale system for text detection and recognition in images", in KDD, 2018
 
-[6] https://github.com/facebookresearch/detectron2
+[6] A. Gupta, A. Vedaldi, and A. Zisserman, “Synthetic Data for Text Localisation in Natural Images”, in CVPR, 2016
 
-[7] https://github.com/facebookresearch/mobile-vision/tree/master/mobile_cv/arch
+[7] https://ai.facebook.com/blog/-detectron2-a-pytorch-based-modular-object-detection-library-/
 
-[8] M. Jaderberg, K. Simonyan, A. Vedaldi, and A. Zisserman, “Reading Text in the Wild with Convolutional Neural Networks”, in IJCV, 2016
+[8] https://github.com/facebookresearch/mobile-vision/tree/master/mobile_cv/arch
+
+[9] M. Jaderberg, K. Simonyan, A. Vedaldi, and A. Zisserman, “Reading Text in the Wild with Convolutional Neural Networks”, in IJCV, 2016
 
 # Prerequisites
 
